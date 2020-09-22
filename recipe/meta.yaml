@@ -18,14 +18,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - cudatoolkit-dev   {{ cudatoolkit }}
-    - make {{ make }}  
+    - nvcc  {{ cudatoolkit }}
+    - make  {{ make }}  
   run:
-    - cudatoolkit       {{ cudatoolkit }}
+    - cudatoolkit  {{ cudatoolkit }}
 
 test:
   requires:
-    - cudatoolkit-dev   {{ cudatoolkit }}
+    - cudatoolkit-dev  {{ cudatoolkit }}
     - {{ compiler('cxx') }}
 
 about:
