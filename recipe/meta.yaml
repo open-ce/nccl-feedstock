@@ -17,16 +17,16 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler("cuda") }}
   host:
-    - nvcc  {{ cudatoolkit }}
     - make  {{ make }}  
   run:
     - cudatoolkit  {{ cudatoolkit }}
 
 test:
   requires:
-    - cudatoolkit-dev  {{ cudatoolkit }}
     - {{ compiler('cxx') }}
+    - {{ compiler("cuda") }}
 
 about:
   home: https://github.com/NVIDIA/nccl.git
