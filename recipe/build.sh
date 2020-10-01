@@ -8,6 +8,9 @@
 # disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
 #
 # *****************************************************************
+
+export CUDA_HOME=$CONDA_PREFIX
+ 
 make -j src.build
 rm -rf build/obj/
 cp -R build/* $PREFIX/
