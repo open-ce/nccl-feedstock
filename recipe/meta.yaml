@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - make  {{ make }}  
+    - make
   run:
     - cudatoolkit  {{ cudatoolkit }}
 
