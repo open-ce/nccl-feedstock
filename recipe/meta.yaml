@@ -30,7 +30,9 @@ test:
 
 about:
   home: https://github.com/NVIDIA/nccl.git
-  license_file: LICENSE
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
   summary: NVIDIA Collective Communications Library. Implements multi-GPU and multi-node
            collective communication primitives for NVIDIA GPUs.
   description: |
