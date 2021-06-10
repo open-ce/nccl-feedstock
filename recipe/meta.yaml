@@ -24,6 +24,10 @@ requirements:
     - libstdcxx-ng  {{ libstdcxx }}
   host:
     - make
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
+         
   run:
     - cudatoolkit  {{ cudatoolkit }}
 
