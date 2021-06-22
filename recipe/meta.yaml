@@ -14,15 +14,27 @@ build:
   string: cuda{{ cudatoolkit | replace(".*", "") }}_{{ PKG_BUILDNUM }}
   script_env:
     - CUDA_HOME
+  ignore_run_exports:
+    - libgcc-ng
+    - libstdcxx-ng
   
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - make
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - cudatoolkit  {{ cudatoolkit }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
 
 test:
   requires:
