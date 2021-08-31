@@ -10,7 +10,7 @@ source:
   git_rev: v{{ version }}-1
 
 build:
-  number: 2
+  number: 3
   string: cuda{{ cudatoolkit | replace(".*", "") }}_{{ PKG_BUILDNUM }}
   script_env:
     - CUDA_HOME
@@ -19,14 +19,8 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - make
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - cudatoolkit  {{ cudatoolkit }}
 
