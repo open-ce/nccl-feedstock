@@ -10,7 +10,7 @@ source:
   git_rev: v{{ version }}-1
 
 build:
-  number: 2
+  number: 3
   string: cuda{{ cudatoolkit | replace(".*", "") }}_{{ PKG_BUILDNUM }}
   script_env:
     - CUDA_HOME
@@ -20,13 +20,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
+    - libgcc-ng  {{ libgcc }}         # [x86_64 and c_compiler_version == "7.2.*"]
+    - libstdcxx-ng  {{ libstdcxx }}   # [x86_64 and c_compiler_version == "7.2.*"]
   host:
     - make
     # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
+    - libgcc-ng  {{ libgcc }}         # [x86_64 and c_compiler_version == "7.2.*"]
+    - libstdcxx-ng  {{ libstdcxx }}   # [x86_64 and c_compiler_version == "7.2.*"]
   run:
     - cudatoolkit  {{ cudatoolkit }}
 
